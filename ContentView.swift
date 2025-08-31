@@ -357,7 +357,7 @@ struct ContentView: View {
             HStack {
                 TextField("Enter project zip code", text: $pricingModel.projectZipCode)
                     .keyboardType(.numberPad)
-                    .onChange(of: pricingModel.projectZipCode) { newValue in
+                    .onChange(of: pricingModel.projectZipCode) { _, newValue in
                         // Auto-calculate when zip code is 5 digits
                         if newValue.count == 5 && !pricingModel.baseLocationAddress.isEmpty {
                             pricingModel.calculateTransportTime(for: newValue)
@@ -695,7 +695,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .keyboardType(.numberPad)
                     .multilineTextAlignment(.center)
-                    .onChange(of: pricingModel.projectZipCode) { newValue in
+                    .onChange(of: pricingModel.projectZipCode) { _, newValue in
                         // Auto-calculate when zip code is 5 digits
                         if newValue.count == 5 && !pricingModel.baseLocationAddress.isEmpty {
                             pricingModel.calculateTransportTime(for: newValue)

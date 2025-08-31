@@ -293,7 +293,7 @@ struct SettingsView: View {
                     .onSubmit {
                         searchForAddress(value.wrappedValue)
                     }
-                    .onChange(of: value.wrappedValue) { newValue in
+                    .onChange(of: value.wrappedValue) { _, newValue in
                         if newValue.count > 3 {
                             searchForAddress(newValue)
                         }
